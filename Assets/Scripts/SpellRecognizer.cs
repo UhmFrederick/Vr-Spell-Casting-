@@ -8,17 +8,14 @@ using System.IO;
 
 public class SpellRecognizer : MonoBehaviour
 {
-    public XRNode inputSource; //the hand we want to use for the drawing
     public InputHelpers.Button inputtrigger;
     public InputHelpers.Button inputgrip;
     public float inputThreshold = 0.1f;
+    public XRNode inputSource; //the hand we want to use for the drawing
     public Transform movementScource;//the hand we want to use for the drawing
 
     public float newPosThresHoldDistance = 0.05f;
     public GameObject debugCubeb;
-    public bool creationMode = true;
-    public string newSpellName;
-    public string newSpellElement;
 
     public SpellManager spellManager;
 
@@ -66,6 +63,7 @@ public class SpellRecognizer : MonoBehaviour
         {
             isMoving = true;
             positionList.Clear();
+            //create first point
             positionList.Add(movementScource.position);
             if (debugCubeb)
             {
@@ -83,32 +81,20 @@ public class SpellRecognizer : MonoBehaviour
                 Vector2 screenPoint = Camera.main.WorldToScreenPoint(positionList[i]); //project change 3d points to 2d by projecting them onto the camera
                 pointArray[i] = new Point(screenPoint.x, screenPoint.y, 0);
             }
-
             Gesture newGesture = new Gesture(pointArray);
-            //add gesture to training set
-            if (creationMode)
-            {
-                newGesture.Name = newSpellName;
-                trainingSet.Add(newGesture);
-                //save file of gesture
-                string fileName = Application.persistentDataPath + "/" + "(Spell)" + "(" + newSpellElement + ")" + newSpellName + ".xml";
-                GestureIO.WriteGesture(pointArray, newSpellName, fileName);
-                Debug.Log("New Spell Added");
-            }
+
             //recognise gesture;
-            else
+            Result result = PointCloudRecognizer.Classify(newGesture, trainingSet.ToArray());
+            Debug.Log(result.GestureClass + result.Score);
+
+            //gets the average position of all the points(where the spell should spawn)
+            Vector3 spellSpawnPoint = Vector3.zero;
+            for (int i = 0; i < positionList.Count; i++)
             {
-                Result result = PointCloudRecognizer.Classify(newGesture, trainingSet.ToArray());
-                Debug.Log(result.GestureClass + result.Score);
-                //gets the average position of all the points(where the spell should spawn)
-                Vector3 spellSpawnPoint = Vector3.zero;
-                for (int i = 0; i < positionList.Count; i++)
-                {
-                    spellSpawnPoint += positionList[i];
-                }
-                spellSpawnPoint = spellSpawnPoint / positionList.Count;
-                spellManager.GetSpell(result.GestureClass, result.Score, spellSpawnPoint);
+                spellSpawnPoint += positionList[i];
             }
+            spellSpawnPoint = spellSpawnPoint / positionList.Count;
+            spellManager.GetSpell(result.GestureClass, result.Score, spellSpawnPoint);
         }
         void UpdateMovement()
         {

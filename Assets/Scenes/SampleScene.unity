@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -544,7 +544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1253264983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,17 +557,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361b0d9e1daec8840b232c33e00fb8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSource: 5
   inputtrigger: 2
   inputgrip: 3
   inputThreshold: 0.1
+  inputSource: 5
   movementScource: {fileID: 1898339875}
   newPosThresHoldDistance: 0.05
   debugCubeb: {fileID: 4973886068156054179, guid: 9f769c83c192e844488ba572753972b7,
     type: 3}
-  creationMode: 0
-  newSpellName: 
-  newSpellElement: 
   spellManager: {fileID: 2106397186}
 --- !u!4 &1253264984
 Transform:
@@ -600,7 +597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1480788930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,15 +610,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928f559a9e0055840b8885b9e8e3d131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSource: 5
   inputButton: 3
   inputThreshold: 0.1
+  inputSource: 5
   movementScource: {fileID: 1898339875}
   newPosThresHoldDistance: 0.05
   debugCubeb: {fileID: 4973886068156054179, guid: 9f769c83c192e844488ba572753972b7,
     type: 3}
-  creationMode: 0
-  newGestureName: 
   spellManager: {fileID: 2106397186}
 --- !u!4 &1480788931
 Transform:

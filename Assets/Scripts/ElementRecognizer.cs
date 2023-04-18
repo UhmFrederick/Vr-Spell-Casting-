@@ -8,18 +8,15 @@ using System.IO;
 
 public class ElementRecognizer: MonoBehaviour
 {
-    public XRNode inputSource; //the hand we want to use for the drawing
     public InputHelpers.Button inputButton;
     public float inputThreshold = 0.1f;
+    public XRNode inputSource; //the hand we want to use for the drawing
     public Transform movementScource;//the hand we want to use for the drawing
 
     public float newPosThresHoldDistance = 0.05f;
     public GameObject debugCubeb;
-    public bool creationMode = true;
-    public string newGestureName;
 
     public SpellManager spellManager;
-
 
     private List<Gesture> trainingSet = new List<Gesture>();
     private bool isMoving = false;
@@ -83,23 +80,10 @@ public class ElementRecognizer: MonoBehaviour
             }
 
             Gesture newGesture = new Gesture(pointArray);
-            //add gesture to training set
-            if (creationMode)
-            {
-                newGesture.Name = newGestureName;
-                trainingSet.Add(newGesture);
-                //save file of gesture
-                string fileName = Application.persistentDataPath + "/" + "(Element)" + newGestureName + ".xml";
-                GestureIO.WriteGesture(pointArray,newGestureName, fileName);
-                Debug.Log("New Element Added");
-            }
             //recognise gesture;
-            else
-            {
-                Result result = PointCloudRecognizer.Classify(newGesture,trainingSet.ToArray());
-                Debug.Log(result.GestureClass + result.Score);
-                spellManager.GetActiveElement(result.GestureClass, result.Score);
-            }
+            Result result = PointCloudRecognizer.Classify(newGesture,trainingSet.ToArray());
+            Debug.Log(result.GestureClass + result.Score);
+            spellManager.GetActiveElement(result.GestureClass, result.Score);
         }
         void UpdateMovement()
         {
