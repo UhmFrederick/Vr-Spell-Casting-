@@ -25,6 +25,7 @@ public class SpellManager : MonoBehaviour
     {
         
     }
+    //sets the active element (yes ik i wrote it wrong)
     public void GetActiveElement(string output, float score)
     {
         //check if the algorithm is sure its the right symbol

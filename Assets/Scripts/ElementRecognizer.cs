@@ -14,7 +14,6 @@ public class ElementRecognizer: MonoBehaviour
     public Transform movementScource;//the hand we want to use for the drawing
 
     public float newPosThresHoldDistance = 0.05f;
-    public GameObject debugCubeb;
 
     public SpellManager spellManager;
 
@@ -62,10 +61,6 @@ public class ElementRecognizer: MonoBehaviour
             isMoving = true;
             positionList.Clear();
             positionList.Add(movementScource.position);
-            if (debugCubeb)
-            {
-                Destroy(Instantiate(debugCubeb, movementScource.position, Quaternion.identity), 3);
-            }
         }
         void EndMovement()
         {
@@ -91,11 +86,6 @@ public class ElementRecognizer: MonoBehaviour
             if (Vector3.Distance(movementScource.position,lastPosition) > newPosThresHoldDistance)
             {
                 positionList.Add(movementScource.position);
-                //spawn debug cubes
-                if (debugCubeb)
-                {
-                    Destroy(Instantiate(debugCubeb, movementScource.position, Quaternion.identity), 3);
-                }
             }
 
         }

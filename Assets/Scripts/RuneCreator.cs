@@ -11,6 +11,7 @@ public class RuneCreator : MonoBehaviour
     public string Spell; // Name of the new Spell ore element
     public string Element;
     public bool isSpell;
+    public GameObject debugCubeb;
 
 
     private List<Vector3> positionList = new List<Vector3>();// list of positions for the path
@@ -52,6 +53,11 @@ public class RuneCreator : MonoBehaviour
         isMoving = true;
         positionList.Clear();
         positionList.Add(movementScource.position);
+        // check if a object is in debug cube and if so spawn one on the new point
+        if (debugCubeb)
+        {
+            Destroy(Instantiate(debugCubeb, movementScource.position, Quaternion.identity), 3);
+        }
     }
 
     void UpdateMovement()
@@ -61,6 +67,11 @@ public class RuneCreator : MonoBehaviour
         if (Vector3.Distance(movementScource.position, lastPosition) > newPosThresHoldDistance)
         {
             positionList.Add(movementScource.position);
+            // check if a object is in debug cube and if so spawn one on the new point
+            if (debugCubeb)
+            {
+                Destroy(Instantiate(debugCubeb, movementScource.position, Quaternion.identity), 3);
+            }
         }
 
     }
