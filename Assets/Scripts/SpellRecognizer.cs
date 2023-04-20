@@ -82,14 +82,9 @@ public class SpellRecognizer : MonoBehaviour
             Result result = PointCloudRecognizer.Classify(newGesture, trainingSet.ToArray());
             Debug.Log(result.GestureClass + result.Score);
 
-            //gets the average position of all the points(where the spell should spawn)
-            Vector3 spellSpawnPoint = Vector3.zero;
-            for (int i = 0; i < positionList.Count; i++)
-            {
-                spellSpawnPoint += positionList[i];
-            }
-            spellSpawnPoint = spellSpawnPoint / positionList.Count;
-            spellManager.GetSpell(result.GestureClass, result.Score, spellSpawnPoint);
+            //sends info to rune container and invoked the Cast Spell Event
+
+
         }
         void UpdateMovement()
         {

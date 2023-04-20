@@ -7,7 +7,7 @@ public class RuneContainer : ScriptableObject
 {
     private string Name;
     private float Score;
-    private List<Vector3> PointList;
+    private List<Vector3> pointList;
     public float scoreThreshold;
     //Compairs the Score to the score threshold.
     private bool ScoreCompair(float score)
@@ -33,7 +33,7 @@ public class RuneContainer : ScriptableObject
         {
             Name = name;
             Score = score;
-            PointList = points;
+            pointList = points;
         }
     }
     /// <summary>
@@ -58,6 +58,6 @@ public class RuneContainer : ScriptableObject
     /// <returns></returns>
     public List<Vector3> GetPoints()
     {
-        return PointList;
+        return pointList;
     }
 }

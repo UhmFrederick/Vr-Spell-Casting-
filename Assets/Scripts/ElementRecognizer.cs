@@ -78,7 +78,9 @@ public class ElementRecognizer: MonoBehaviour
             //recognise gesture;
             Result result = PointCloudRecognizer.Classify(newGesture,trainingSet.ToArray());
             Debug.Log(result.GestureClass + result.Score);
-            spellManager.GetActiveElement(result.GestureClass, result.Score);
+
+            //sends info to rune container
+
         }
         void UpdateMovement()
         {

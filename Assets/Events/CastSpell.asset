@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17c482ca51a9ee7469d52a42c9c69a55, type: 3}
-  m_Name: Spells
+  m_Script: {fileID: 11500000, guid: 130438b1504c39b4daeca892ca99fe59, type: 3}
+  m_Name: CastSpell
   m_EditorClassIdentifier: 
-  numberList:
-  - {fileID: 6149777136982922417, guid: 0cd2954c847e33041a313f6310024d2b, type: 3}
+  listeners: []
