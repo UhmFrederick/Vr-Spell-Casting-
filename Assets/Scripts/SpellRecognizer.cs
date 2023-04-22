@@ -16,11 +16,14 @@ public class SpellRecognizer : MonoBehaviour
 
     public float newPosThresHoldDistance = 0.05f;
 
-    public SpellManager spellManager;
-
     private List<Gesture> trainingSet = new List<Gesture>();
     private bool isMoving = false;
     private List<Vector3> positionList = new List<Vector3>();
+
+    //Spell and elemetn container
+    public RuneContainer Spell;
+    public RuneContainer Element;
+
     // Start is called before the first frame update
     void Start()
     {

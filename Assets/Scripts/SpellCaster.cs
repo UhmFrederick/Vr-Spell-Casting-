@@ -12,6 +12,7 @@ public class SpellCaster : MonoBehaviour
     {
         
     }
+
     /// <summary>
     /// gets the average position of all the points(where the spell should spawn)
     /// </summary>

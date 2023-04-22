@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -691,7 +691,8 @@ MonoBehaviour:
   inputSource: 5
   movementScource: {fileID: 1898339875}
   newPosThresHoldDistance: 0.05
-  spellManager: {fileID: 0}
+  Spell: {fileID: 11400000, guid: 05d234ee95a1c7344819713187efd309, type: 2}
+  Element: {fileID: 11400000, guid: ecdfc404aa251524f875cc4527078c46, type: 2}
 --- !u!4 &1253264984
 Transform:
   m_ObjectHideFlags: 0
@@ -741,7 +742,8 @@ MonoBehaviour:
   inputSource: 5
   movementScource: {fileID: 1898339875}
   newPosThresHoldDistance: 0.05
-  spellManager: {fileID: 0}
+  Spell: {fileID: 11400000, guid: 05d234ee95a1c7344819713187efd309, type: 2}
+  Element: {fileID: 11400000, guid: ecdfc404aa251524f875cc4527078c46, type: 2}
 --- !u!4 &1480788931
 Transform:
   m_ObjectHideFlags: 0
