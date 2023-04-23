@@ -20,9 +20,8 @@ public class SpellRecognizer : MonoBehaviour
     private bool isMoving = false;
     private List<Vector3> positionList = new List<Vector3>();
 
-    //Spell and elemetn container
+    //Spell container
     public RuneContainer Spell;
-    public RuneContainer Element;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +62,7 @@ public class SpellRecognizer : MonoBehaviour
 
         void StartMovement()
         {
+            Debug.Log("start");
             isMoving = true;
             positionList.Clear();
             //create first point
@@ -86,7 +86,7 @@ public class SpellRecognizer : MonoBehaviour
             Debug.Log(result.GestureClass + result.Score);
 
             //sends info to rune container and invoked the Cast Spell Event
-
+            Spell.SetValues(result.GestureClass, result.Score, positionList);
 
         }
         void UpdateMovement()

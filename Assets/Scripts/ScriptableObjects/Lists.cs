@@ -5,5 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Create List")]
 public class Lists : ScriptableObject
 {
-    public List<GameObject> numberList = new List<GameObject>();
+    public List<GameObject> List1 = new List<GameObject>();
+
+    public List<GameObject> GetList()
+    {
+        return List1;
+    }
 }

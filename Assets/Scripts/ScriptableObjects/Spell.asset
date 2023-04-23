@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4c34e1cd275674c98bd559acce5cad, type: 3}
   m_Name: Spell
   m_EditorClassIdentifier: 
-  scoreThreshold: 90
+  scoreThreshold: 0.9
+  CastSpell: {fileID: 11400000, guid: 5dfdc493529b62b45bd2dc136ecd4e21, type: 2}

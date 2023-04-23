@@ -19,8 +19,7 @@ public class ElementRecognizer: MonoBehaviour
     private bool isMoving = false;
     private List<Vector3> positionList = new List<Vector3>();
 
-    //Spell and elemetn container
-    public RuneContainer Spell;
+    //Element container
     public RuneContainer Element;
 
     // Start is called before the first frame update
@@ -63,10 +62,12 @@ public class ElementRecognizer: MonoBehaviour
             Debug.Log("start");
             isMoving = true;
             positionList.Clear();
+            //create first point
             positionList.Add(movementScource.position);
         }
         void EndMovement()
         {
+
             isMoving = false;
             //create the gesture from position list
             Point[] pointArray = new Point[positionList.Count];
@@ -79,10 +80,11 @@ public class ElementRecognizer: MonoBehaviour
 
             Gesture newGesture = new Gesture(pointArray);
             //recognise gesture;
-            Result result = PointCloudRecognizer.Classify(newGesture,trainingSet.ToArray());
+            Result result = PointCloudRecognizer.Classify(newGesture, trainingSet.ToArray());
             Debug.Log(result.GestureClass + result.Score);
 
             //sends info to rune container
+            Element.SetValues(result.GestureClass, result.Score, positionList);
 
         }
         void UpdateMovement()

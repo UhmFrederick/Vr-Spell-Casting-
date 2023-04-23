@@ -17,20 +17,22 @@ public class RuneCreator : MonoBehaviour
     private List<Vector3> positionList = new List<Vector3>();// list of positions for the path
     public XRNode inputSource; //the hand we want to use for the drawing
     public Transform movementScource;//the hand we want to use for the drawing
-    public InputHelpers.Button inputButton; //button you need to press
+    public InputHelpers.Button inputGrip; //button you need to press
+    public InputHelpers.Button inputtrigger;
     public float newPosThresHoldDistance = 0.05f; //the distance between the points in the scene
     private bool isMoving;
     private void Update()
     {
         //set bool based on if we are pressing selected button
-        InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), inputButton, out bool isPressed, 0.1f);
+        InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), inputGrip, out bool isPressed, 0.1f);
+        InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), inputtrigger, out bool trigger, 0.1f);
         //Start Move
         if (!isMoving && isPressed)
         {
             StartMovement();
         }
         //End Move
-        else if (isMoving && !isPressed)
+        else if (isMoving && trigger)
         {
             if (isSpell)
             {
@@ -103,10 +105,10 @@ public class RuneCreator : MonoBehaviour
         }
         Gesture newGesture = new Gesture(pointArray);
         //add gesture to training set
-        newGesture.Name = Spell;
+        newGesture.Name = "(" + Element + ")" + Spell;
         //save file of gesture
         string fileName = Application.persistentDataPath + "/" + "(Spell)" + "(" + Element + ")" + Spell + ".xml";
-        GestureIO.WriteGesture(pointArray, Spell, fileName);
+        GestureIO.WriteGesture(pointArray, "(" + Element + ")" + Spell, fileName);
         Debug.Log("New Spell Added");
     }
 }

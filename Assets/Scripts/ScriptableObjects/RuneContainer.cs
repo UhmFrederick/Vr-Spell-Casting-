@@ -9,6 +9,10 @@ public class RuneContainer : ScriptableObject
     private float Score;
     private List<Vector3> pointList;
     public float scoreThreshold;
+
+    //game event
+    public GameEvent CastSpell;
+
     //Compairs the Score to the score threshold.
     private bool ScoreCompair(float score)
     {
@@ -20,6 +24,13 @@ public class RuneContainer : ScriptableObject
         {
             return false;
         }
+    }
+
+    public void Reset()
+    {
+        Name = "no spell";
+        Score = 0;
+        pointList = null;
     }
     /// <summary>
     /// Sets the value of the Spell or Element as well as its Score and a list of its points
@@ -34,8 +45,15 @@ public class RuneContainer : ScriptableObject
             Name = name;
             Score = score;
             pointList = points;
+            TraggerCastEvent();
         }
     }
+    //trigger CastSpell if it is a spell
+    private void TraggerCastEvent()
+    {
+            CastSpell.Raise();
+    }
+
     /// <summary>
     /// Returns The Name of the Spell or Element as a String
     /// </summary>
