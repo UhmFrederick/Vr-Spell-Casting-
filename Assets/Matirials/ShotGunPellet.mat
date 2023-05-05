@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4179165728717571249
+--- !u!114 &-5964201192573235554
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: test fire
-  m_Shader: {fileID: -6465566751694194690, guid: 74ff3dd7df92db140ae80856c1371e49,
+  m_Name: ShotGunPellet
+  m_Shader: {fileID: -6465566751694194690, guid: 12c8a4227e86e6e46a91e57ebd81e0ac,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -112,7 +112,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.25
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -120,8 +120,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
-    - _Color: {r: 18.365055, g: 0.2839462, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.6037736, g: 0.46119288, b: 0.17942329, a: 1}
+    - _Color: {r: 0.6037736, g: 0.4611928, b: 0.17942324, a: 1}
+    - _EmissionColor: {r: 0.21960784, g: 0.09803922, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

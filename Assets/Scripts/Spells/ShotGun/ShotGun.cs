@@ -8,6 +8,8 @@ public class ShotGun : MonoBehaviour
     public GameObject Pellet;
     //the Number of Pellets Spawned
     public int PelletNumber;
+    //when will the spell disaprear.
+    public float MaxRange;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,6 @@ public class ShotGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

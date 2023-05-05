@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c064e964d64d5104481c834abbfe3cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pellet: {fileID: 0}
-  PelletNumber: 5
+  Pellet: {fileID: 4579506107481389786, guid: 31c823b112550a24facd714ee3bdfbd8, type: 3}
+  PelletNumber: 30
