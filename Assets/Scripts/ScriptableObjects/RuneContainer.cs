@@ -38,14 +38,17 @@ public class RuneContainer : ScriptableObject
     /// <param name="name">Name of the Spell or Element</param>
     /// <param name="score">Confidence score given to this Rune</param>
     /// <param name="points">List of points making up the Rune</param>
-    public void SetValues(string name, float score, List<Vector3> points)
+    public void SetValues(string name, float score, List<Vector3> points, bool isSpell)
     {
         if (ScoreCompair(score))
         {
             Name = name;
             Score = score;
             pointList = points;
-            TraggerCastEvent();
+            if (isSpell)
+            {
+                TraggerCastEvent();
+            }
         }
     }
     //trigger CastSpell if it is a spell

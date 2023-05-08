@@ -72,7 +72,7 @@ public class RuneCreator : MonoBehaviour
             // check if a object is in debug cube and if so spawn one on the new point
             if (debugCubeb)
             {
-                Destroy(Instantiate(debugCubeb, movementScource.position, Quaternion.identity), 3);
+                Destroy(Instantiate(debugCubeb, movementScource.position, Quaternion.identity), 4);
             }
         }
 

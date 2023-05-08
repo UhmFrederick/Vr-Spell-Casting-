@@ -42,7 +42,7 @@ public class SpellCaster : MonoBehaviour
     }
 
     /// <summary>
-    /// hecks The Current spell is of the correct element
+    /// checks The Current spell is of the correct element
     /// </summary>
     /// <param name="S">Spell Container</param>
     /// <param name="E">Element Container</param>
@@ -78,6 +78,5 @@ public class SpellCaster : MonoBehaviour
     {
         //Start cast fail event
         Spell.Reset();
-        Element.Reset();
     }
 }

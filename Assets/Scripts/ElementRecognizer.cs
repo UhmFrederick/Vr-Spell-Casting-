@@ -84,7 +84,7 @@ public class ElementRecognizer: MonoBehaviour
             Debug.Log(result.GestureClass + result.Score);
 
             //sends info to rune container
-            Element.SetValues(result.GestureClass, result.Score, positionList);
+            Element.SetValues(result.GestureClass, result.Score, positionList, false);
 
         }
         void UpdateMovement()

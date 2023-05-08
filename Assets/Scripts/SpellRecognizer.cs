@@ -86,7 +86,7 @@ public class SpellRecognizer : MonoBehaviour
             Debug.Log(result.GestureClass + result.Score);
 
             //sends info to rune container and invoked the Cast Spell Event
-            Spell.SetValues(result.GestureClass, result.Score, positionList);
+            Spell.SetValues(result.GestureClass, result.Score, positionList, true);
 
         }
         void UpdateMovement()
