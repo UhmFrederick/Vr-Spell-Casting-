@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5993439014875025547
+--- !u!1 &8731022211134348467
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5993439014875025541}
-  - component: {fileID: 5993439014875025540}
+  - component: {fileID: 8731022211134348469}
+  - component: {fileID: 8731022211134348466}
   m_Layer: 0
-  m_Name: New Rune Creator
+  m_Name: RuneCreator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5993439014875025541
+--- !u!4 &8731022211134348469
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5993439014875025547}
+  m_GameObject: {fileID: 8731022211134348467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5993439014875025540
+--- !u!114 &8731022211134348466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5993439014875025547}
+  m_GameObject: {fileID: 8731022211134348467}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c88994cca092a4f40926dacff9a03f6a, type: 3}
@@ -47,7 +47,10 @@ MonoBehaviour:
   Spell: 
   Element: 
   isSpell: 0
+  debugCubeb: {fileID: 4973886068156054179, guid: 9f769c83c192e844488ba572753972b7,
+    type: 3}
   inputSource: 5
   movementScource: {fileID: 0}
-  inputButton: 3
+  inputGrip: 3
+  inputtrigger: 2
   newPosThresHoldDistance: 0.05
